@@ -1,6 +1,19 @@
+using AutoMapper;
+using eCommerce.CouponService;
+using eCommerce.CouponService.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<AppDBContext>(option => 
+{
+    option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString"));
+
+});
+IMapper mapper = MappingConfig.RegMaps().CreateMapper();
+builder.Services.AddSingleton(mapper);
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -19,5 +32,18 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+ApplyInitMigrations();
 app.Run();
+
+
+void ApplyInitMigrations() 
+{
+    using (var scope = app.Services.CreateScope()) 
+    {
+        var dbContext = scope.ServiceProvider.GetRequiredService<AppDBContext>();
+        if (dbContext.Database.GetPendingMigrations().Count() > 0) 
+        {
+            dbContext.Database.Migrate();
+        }
+    }
+}
