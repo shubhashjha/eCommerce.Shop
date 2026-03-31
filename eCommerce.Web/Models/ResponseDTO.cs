@@ -1,4 +1,4 @@
-﻿namespace eCommerce.CouponService.Model.DTO
+﻿namespace eCommerce.Web.Models
 {
     public class ResponseDTO
     {

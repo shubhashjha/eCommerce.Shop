@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
-using Azure;
 using eCommerce.CouponService.Data;
 using eCommerce.CouponService.Model;
 using eCommerce.CouponService.Model.DTO;
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.CompilerServices;
 
 namespace eCommerce.CouponService.Controllers
 {
@@ -23,7 +21,7 @@ namespace eCommerce.CouponService.Controllers
         }
 
         [HttpGet]
-        public object Get()
+        public ResponseDTO Get()
         {
             try
             {
@@ -40,13 +38,67 @@ namespace eCommerce.CouponService.Controllers
         }
 
         [HttpGet]
-        [Route("{id:int}")]
-        public object Get(int id)
+        [Route("GetByCode/{Code}")]
+        public ResponseDTO GetByCode(string code)
+        {
+            try
+            {
+                Coupon coupons = appDBContext.Coupons.First(x => x.Code == code);
+                response.Result = mapper.Map<CouponDTO>(coupons);
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+        [HttpPost]
+        public ResponseDTO Post([FromBody] CouponDTO coupon)
+        {
+            try
+            {
+                Coupon requestBody = mapper.Map<Coupon>(coupon);
+                appDBContext.Coupons.Add(requestBody);
+                appDBContext.SaveChanges();
+                response.Result = mapper.Map<CouponDTO>(requestBody);
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+
+        [HttpPut]
+        public ResponseDTO Put([FromBody] CouponDTO coupon)
+        {
+            try
+            {
+                Coupon requestBody = mapper.Map<Coupon>(coupon);
+                appDBContext.Coupons.Update(requestBody);
+                appDBContext.SaveChanges();
+                response.Result = mapper.Map<CouponDTO>(requestBody);
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+        [HttpDelete]
+        public ResponseDTO Delete(int id)
         {
             try
             {
                 Coupon coupons = appDBContext.Coupons.First(x => x.Id == id);
-                response.Result = mapper.Map<CouponDTO>(coupons);
+                appDBContext.Coupons.Remove(coupons);
+                appDBContext.SaveChanges();
             }
             catch (Exception ex)
             {

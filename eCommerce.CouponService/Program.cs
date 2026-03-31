@@ -11,9 +11,7 @@ builder.Services.AddDbContext<AppDBContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString"));
 
 });
-IMapper mapper = MappingConfig.RegMaps().CreateMapper();
-builder.Services.AddSingleton(mapper);
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(_ => { }, AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

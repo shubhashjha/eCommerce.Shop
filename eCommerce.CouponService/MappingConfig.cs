@@ -4,16 +4,12 @@ using eCommerce.CouponService.Model.DTO;
 
 namespace eCommerce.CouponService
 {
-    public class MappingConfig
+    public class MappingConfig : Profile
     {
-        public static MapperConfiguration RegMaps() 
+        public MappingConfig()
         {
-            var mappingConfig = new MapperConfiguration(config => 
-            {
-                config.CreateMap<CouponDTO,Coupon>();
-                config.CreateMap<Coupon, CouponDTO>();
-            }); 
-            return mappingConfig;
+            CreateMap<CouponDTO, Coupon>();
+            CreateMap<Coupon, CouponDTO>();
         }
     }
 }
