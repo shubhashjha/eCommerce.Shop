@@ -32,7 +32,7 @@ namespace eCommerce.CouponService.Controllers
             {
                 response.IsSuccess = false;
                 response.Message = ex.Message;
-                
+
             }
             return response;
         }
@@ -92,6 +92,7 @@ namespace eCommerce.CouponService.Controllers
         }
 
         [HttpDelete]
+        [Route("{id:int}")]
         public ResponseDTO Delete(int id)
         {
             try
