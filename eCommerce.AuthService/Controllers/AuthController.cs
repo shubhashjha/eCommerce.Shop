@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using eCommerce.AuthService.Models.Dto;
+using eCommerce.AuthService.Services.IService;
+using eCommerce.MessageBus;
+using Microsoft.AspNetCore.Mvc;
 
 namespace eCommerce.AuthService.Controllers
 {

@@ -2,6 +2,7 @@ using eCommerce.AuthService.Data;
 using eCommerce.AuthService.Models;
 using eCommerce.AuthService.Services;
 using eCommerce.AuthService.Services.IService;
+using eCommerce.MessageBus;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
