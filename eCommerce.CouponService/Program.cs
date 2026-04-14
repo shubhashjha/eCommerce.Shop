@@ -1,5 +1,3 @@
-using AutoMapper;
-using eCommerce.CouponService;
 using eCommerce.CouponService.Data;
 using Microsoft.EntityFrameworkCore;
 
