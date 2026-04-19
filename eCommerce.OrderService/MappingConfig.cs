@@ -1,27 +1,24 @@
-﻿using AutoMapper;
+using AutoMapper;
+using eCommerce.OrderService.Model;
+using eCommerce.OrderService.Model.Dto;
 
 namespace eCommerce.OrderService
 {
-    public class MappingConfig
+    public class MappingConfig : Profile
     {
-        public static MapperConfiguration RegisterMaps()
+        public MappingConfig()
         {
-            var mappingConfig = new MapperConfiguration(config =>
-            {
-                config.CreateMap<OrderHeaderDto, CartHeaderDto>()
-                .ForMember(dest => dest.CartTotal, u => u.MapFrom(src => src.OrderTotal)).ReverseMap();
+            CreateMap<OrderHeaderDto, CartHeaderDto>()
+                .ForMember(dest => dest.CartTotal, u => u.MapFrom(src => src.OrderTotal))
+                .ReverseMap();
 
-                config.CreateMap<CartDetailsDto, OrderDetailsDto>()
-                .ForMember(dest => dest.ProductName, u => u.MapFrom(src => src.Product.Name))
-                .ForMember(dest => dest.Price, u => u.MapFrom(src => src.Product.Price));
+            CreateMap<CartDetailsDto, OrderDetailsDto>()
+                .ForMember(dest => dest.ProductName, u => u.MapFrom(src => src.Product != null ? src.Product.Name : string.Empty))
+                .ForMember(dest => dest.Price, u => u.MapFrom(src => src.Product != null ? src.Product.Price : 0));
 
-                config.CreateMap<OrderDetailsDto, CartDetailsDto>();
-
-                config.CreateMap<OrderHeader, OrderHeaderDto>().ReverseMap();
-                config.CreateMap<OrderDetailsDto, OrderDetails>().ReverseMap();
-
-            });
-            return mappingConfig;
+            CreateMap<OrderDetailsDto, CartDetailsDto>();
+            CreateMap<OrderHeader, OrderHeaderDto>().ReverseMap();
+            CreateMap<OrderDetailsDto, OrderDetails>().ReverseMap();
         }
     }
 }

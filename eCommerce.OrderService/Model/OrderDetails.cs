@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+using eCommerce.OrderService.Model.Dto;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eCommerce.OrderService.Model
@@ -18,3 +19,4 @@ namespace eCommerce.OrderService.Model
         public double Price { get; set; }
     }
 }
+
