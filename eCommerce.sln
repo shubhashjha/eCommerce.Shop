@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eCommerce.AuthService", "eC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eCommerce.MessageBus", "eCommerce.MessageBus\eCommerce.MessageBus.csproj", "{B3F907E5-DBA2-40AD-A634-A29F17ED3FDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eCommerce.OrderService", "eCommerce.OrderService\eCommerce.OrderService.csproj", "{A2692853-982A-485A-A2C3-D7503E7DEE03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{B3F907E5-DBA2-40AD-A634-A29F17ED3FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3F907E5-DBA2-40AD-A634-A29F17ED3FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3F907E5-DBA2-40AD-A634-A29F17ED3FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2692853-982A-485A-A2C3-D7503E7DEE03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2692853-982A-485A-A2C3-D7503E7DEE03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2692853-982A-485A-A2C3-D7503E7DEE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2692853-982A-485A-A2C3-D7503E7DEE03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{3CA61E95-E3E7-486A-946D-BD81119BD414} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{1BD080A0-6B29-4ACE-B03C-F2A4A28EDE7A} = {CDEA3668-1093-4529-8DFF-F72A98379E9C}
 		{B3F907E5-DBA2-40AD-A634-A29F17ED3FDA} = {CDEA3668-1093-4529-8DFF-F72A98379E9C}
+		{A2692853-982A-485A-A2C3-D7503E7DEE03} = {CDEA3668-1093-4529-8DFF-F72A98379E9C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {81AEF3CC-640E-48A4-B194-D24A439853C3}
