@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eCommerce.RewardService", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eCommerce.ShoppingCartService", "Services\eCommerce.ShoppingCartService\eCommerce.ShoppingCartService.csproj", "{873F3253-B5B5-488A-987A-2394FFC85F04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eCommerce.EmailService", "Services\eCommerce.EmailService\eCommerce.EmailService.csproj", "{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +135,18 @@ Global
 		{873F3253-B5B5-488A-987A-2394FFC85F04}.Release|x64.Build.0 = Release|Any CPU
 		{873F3253-B5B5-488A-987A-2394FFC85F04}.Release|x86.ActiveCfg = Release|Any CPU
 		{873F3253-B5B5-488A-987A-2394FFC85F04}.Release|x86.Build.0 = Release|Any CPU
+		{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79}.Debug|x64.Build.0 = Debug|Any CPU
+		{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79}.Debug|x86.Build.0 = Debug|Any CPU
+		{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79}.Release|x64.ActiveCfg = Release|Any CPU
+		{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79}.Release|x64.Build.0 = Release|Any CPU
+		{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79}.Release|x86.ActiveCfg = Release|Any CPU
+		{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +160,7 @@ Global
 		{504BE5DC-B576-430E-93E7-0BA91AF3AB4E} = {CDEA3668-1093-4529-8DFF-F72A98379E9C}
 		{60D41F4E-393F-41AE-921F-3AF5D2578801} = {CDEA3668-1093-4529-8DFF-F72A98379E9C}
 		{873F3253-B5B5-488A-987A-2394FFC85F04} = {CDEA3668-1093-4529-8DFF-F72A98379E9C}
+		{1FCDDBF9-1DCF-4B2F-BD21-C01FDBCD6F79} = {CDEA3668-1093-4529-8DFF-F72A98379E9C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {81AEF3CC-640E-48A4-B194-D24A439853C3}
