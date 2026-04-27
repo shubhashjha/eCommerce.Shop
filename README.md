@@ -1,6 +1,6 @@
 # eCommerce Microservices
 
-This repository is an `ASP.NET Core / .NET 8` microservices solution modeled after the `Mango` reference project and adapted under the `eCommerce` name.
+This repository is an `ASP.NET Core / .NET 8` microservices solution built under the `eCommerce` name.
 
 It currently contains:
 
@@ -102,7 +102,7 @@ sequenceDiagram
   Purpose:
   Intended to manage order creation and order lifecycle.
   Current status:
-  The project exists and builds, but its API/controller layer is not yet aligned with the Mango reference flow.
+  The project exists and builds, but its API/controller layer is not yet fully aligned with the web and gateway expectations in this solution.
 
 - `Services/eCommerce.RewardService`
   Purpose:
@@ -134,7 +134,7 @@ Currently configured gateway routes cover:
 - Order API
 
 Note:
-`Auth`, `Reward`, and `Email` are not currently exposed through the gateway because the Mango gateway pattern did not proxy those routes either.
+`Auth`, `Reward`, and `Email` are not currently exposed through the gateway in the current solution configuration.
 
 ## Current URLs
 
@@ -211,7 +211,7 @@ flowchart TD
 ### Partially implemented / needs follow-up
 
 - `eCommerce.OrderService`
-  Current controller discovery shows only `WeatherForecastController` under `Controllers/`, so the full Mango-style order API surface is not yet present.
+  Current controller discovery shows only `WeatherForecastController` under `Controllers/`, so the full expected order API surface is not yet present.
 
 - `eCommerce.RewardService`
   Builds successfully, but it behaves mainly as a background/message consumer rather than a user-facing API.
@@ -230,7 +230,7 @@ Path used:
 
 - `ApiSettings:JwtOptions`
 
-Current issuer/audience names still use Mango-style values:
+Current issuer/audience names are:
 
 - Issuer: `mango-auth-api`
 - Audience: `mango-client`
@@ -255,6 +255,6 @@ There are still existing warnings in the solution, mainly:
 
 1. Complete the `eCommerce.OrderService` API/controller implementation to match the web and gateway expectations.
 2. Clean up nullable warnings across services and web.
-3. Replace Mango-branded JWT issuer/audience values with `eCommerce` names if desired.
+3. Rename JWT issuer/audience values to `eCommerce`-specific names if desired.
 4. Review gateway production routing before deployment.
 5. Decide whether `Auth` APIs should also be proxied through the gateway.
