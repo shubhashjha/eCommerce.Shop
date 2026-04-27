@@ -6,7 +6,8 @@ namespace eCommerce.Web.Models
     {
         public APITYPE APIType { get; set; } = APITYPE.GET;
         public string URL { get; set; } = string.Empty;
-        public object RequestBody { get; set; }
+        public object? RequestBody { get; set; }
         public string AccessToken { get; set; } = string.Empty;
+        public CONTENTTYPE ContentType { get; set; } = CONTENTTYPE.Json;
     }
 }

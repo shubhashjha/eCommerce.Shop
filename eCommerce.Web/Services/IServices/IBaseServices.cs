@@ -4,6 +4,6 @@ namespace eCommerce.Web.Services.IServices
 {
     public interface IBaseServices
     {
-        Task<ResponseDTO> SendAsync(RequestDto request);
+        Task<ResponseDTO> SendAsync(RequestDto request, bool withBearer = true);
     }
 }
